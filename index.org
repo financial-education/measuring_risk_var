@@ -1,4 +1,4 @@
-#+title: "Risk and Value-At-Risk"
+#+title: Risk and Value-At-Risk
 #+author: Matt Brigida, Ph.D.
 #+STARTUP: hideblocks
 #+PROPERTY: header-args :results output :exports both
@@ -11,9 +11,9 @@ Risk is a statement about the likelihood and magnitude of adverse events.  There
 
 - The average return deviation from the mean (standard deviation)
 
-- The expected loss if the return over a period is less than 10\%
+- The expected loss if the return over a period is less than 10%
 
-- The probability you lose over $\$X$ in a given month
+- The probability you lose over $X$ in a given month
 
 To find these values, we'll need some description of how our security (or portfolio) behaves.  
 
@@ -21,7 +21,7 @@ To find these values, we'll need some description of how our security (or portfo
 
 ** Security Behavior
 
-The behavior is described through a [probability density function (PDF)](http://en.wikipedia.org/wiki/Probability_density_function) which gives the likelihood that returns will be in a given interval.
+The behavior is described through a [[http://en.wikipedia.org/wiki/Probability_density_function][probability density function (PDF)]] which gives the likelihood that returns will be in a given interval.
 
 We'll either have to:
 
@@ -55,7 +55,7 @@ The standard deviation is the average *squared* deviation from the mean.
 
 - But we only care about the negative returns when calculating risk.
 
-- Since for a symmetric distribution, the probability of a 5\% or more deviation is equivalent to the probability of -5\% or less deviation, it is fine to square the deviation.
+- Since for a symmetric distribution, the probability of a 5% or more deviation is equivalent to the probability of -5% or less deviation, it is fine to square the deviation.
 
  
 
@@ -91,26 +91,25 @@ In the following app we'll calculate and plot the empirical PDF of the stock's r
 
 - Similarly, we need to pay attention to the difference between the two distributions near the tails.
 
+#+begin_comment
 <!---
 On the second tab the results of hypothesis tests for skewness ad kurtosis are returned.
 -->
-
- 
+#+end_comment
 
 ** Empirical vs Normal Distribution
 
-- Take a look at Twitter ([TWTR](https://www.bloomberg.com/quote/TWTR:US)) over 2014.  The stock's returns exhibit both negative skewness and kurtosis.  This means the standard deviation would have understated risk. 
+- Take a look at Exxon (Ticker: XOM) over 2020.  The stock's returns exhibit both negative skewness and kurtosis.  This means the standard deviation would have understated risk. 
 
-- Looking at Apple ([AAPL](https://www.bloomberg.com/quote/AAPL:US)) from 1/2015 through 4/2015 shows a symmetric, fairly normal, distribution -- the standard deviation would have been a good measure of risk.
+- Looking at Apple (AAPL) from 1/2015 through 4/2015 shows a symmetric, fairly normal, distribution -- the standard deviation would have been a good measure of risk.
 
-- [GE](https://www.bloomberg.com/quote/GE:US) from 1/2015 to 4/2015 shows positive skewness.  The standard deviation would have overstated risk.
+- GE from 1/2015 to 4/2015 shows positive skewness.  The standard deviation would have overstated risk.
 
- 
 
 ** Empirical vs Normal Distribution
 
 #+begin_export html
-<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/dists/" height="100%" width="100%" allow="fullscreen"></iframe>
+<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/dists/" height=800 width="100%" allow="fullscreen"></iframe>
 #+end_export
 
 
@@ -150,17 +149,14 @@ sidebarLayout(
 #+end_comment
 
 
- 
-
 ** Value at Risk (VaR)
 
 VaR is a very common way of stating the amount of risk. 
 
-- 5\% VaR is the return for which, in any given period, there is a 5\% chance of experiencing a worse return.  So say the 5\% VaR is -8\%. Then there is a 5\% chance of experiencing a return less than -8\% over the next period.    
+- 5% VaR is the return for which, in any given period, there is a 5% chance of experiencing a worse return.  So say the 5% VaR is -8%. Then there is a 5% chance of experiencing a return less than -8% over the next period.    
 
 - VaR solely focuses on the left tail of the return distribution. 
 
- 
 
 ** VaR Implementation
 
@@ -176,11 +172,11 @@ VaR still requires an assumption concerning the returns' PDF.
 
 ** VaR App
 
-The following app will calculate the \% VaR for any stock over any time interval you choose.  
+The following app will calculate the % VaR for any stock over any time interval you choose.  
 
 - Click the *Normal* and *Empirical* tabs to see the VaR that assumes a normal PDF (using the historical mean and standard deviation) and a PDF fit to historical data. 
 
-- Can you find stocks for which the normal and empirical VaR are different?  Is the difference in VaR greater if you use 1\% VaR versus 5\% VaR?
+- Can you find stocks for which the normal and empirical VaR are different?  Is the difference in VaR greater if you use 1% VaR versus 5% VaR?
 
 -  VaR is most useful for portfolios, or an entire book of business.  In the following app the default ticker is SPY, an exchange traded fund which tracks the S&P 500 index.
 
@@ -189,7 +185,7 @@ The following app will calculate the \% VaR for any stock over any time interval
 ** Value at Risk (VaR)
 
 #+begin_export html
-<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/var_app/" height="100%" width="100%" allow="fullscreen"></iframe>
+<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/var_app/" height=800 width="100%" allow="fullscreen"></iframe>
 #+end_export
 
 
@@ -266,9 +262,7 @@ tabsetPanel(
 
 ** Continuing from Here
 
-In the following [presentations on risk](http://www.5minutefinance.org/topics/risk) we'll cover topics such as:
-
-- The extent to which the parameters of the PDF change over time (and particularly during a financial crisis)
+- The extent to which the [[https://financial-education.github.io/time_varying_volatility/][parameters of the PDF change over time]] (and particularly during a financial crisis)
 
 - Measures specifically designed for asymmetric distributions, such as *Lower Partial Standard Deviation*
 

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-22 Fri 18:14 -->
+<!-- 2024-04-09 Tue 21:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>"Risk and Value-At-Risk"</title>
+<title>Risk and Value-At-Risk</title>
 <meta name="author" content="Matt Brigida, Ph.D." />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
@@ -51,31 +51,31 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">"Risk and Value-At-Risk"</h1>
+<h1 class="title">Risk and Value-At-Risk</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge353193">1. Risk</a></li>
-<li><a href="#org8046906">2. Security Behavior</a></li>
-<li><a href="#orgfec26cb">3. The Normal Distribution</a></li>
-<li><a href="#orge9182ee">4. Standard Deviation and Symmetry</a></li>
-<li><a href="#org1352f9a">5. Allowing Asymmetry</a></li>
-<li><a href="#orgf963cc4">6. What about Fat Tails?</a></li>
-<li><a href="#orgc6b2e29">7. Historical vs (Symmetric) Normal Distribution</a></li>
-<li><a href="#org8fa0fd5">8. Empirical vs Normal Distribution</a></li>
-<li><a href="#org80eb406">9. Empirical vs Normal Distribution</a></li>
-<li><a href="#org5fa299e">10. Value at Risk (VaR)</a></li>
-<li><a href="#org208d028">11. VaR Implementation</a></li>
-<li><a href="#org23fdd44">12. VaR App</a></li>
-<li><a href="#orgc4320d6">13. Value at Risk (VaR)</a></li>
-<li><a href="#org1af7b7d">14. Continuing from Here</a></li>
+<li><a href="#org5b34444">1. Risk</a></li>
+<li><a href="#orgadf8c0d">2. Security Behavior</a></li>
+<li><a href="#org88d95b4">3. The Normal Distribution</a></li>
+<li><a href="#orgf8a1c29">4. Standard Deviation and Symmetry</a></li>
+<li><a href="#orga83bf4a">5. Allowing Asymmetry</a></li>
+<li><a href="#orga42b477">6. What about Fat Tails?</a></li>
+<li><a href="#org8cff899">7. Historical vs (Symmetric) Normal Distribution</a></li>
+<li><a href="#orgc5440c0">8. Empirical vs Normal Distribution</a></li>
+<li><a href="#org90fc9fc">9. Empirical vs Normal Distribution</a></li>
+<li><a href="#orge8bd574">10. Value at Risk (VaR)</a></li>
+<li><a href="#org6b20dde">11. VaR Implementation</a></li>
+<li><a href="#org4cb5ea2">12. VaR App</a></li>
+<li><a href="#orgfb8e0bc">13. Value at Risk (VaR)</a></li>
+<li><a href="#orgd714dbe">14. Continuing from Here</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge353193" class="outline-2">
-<h2 id="orge353193"><span class="section-number-2">1.</span> Risk</h2>
+<div id="outline-container-org5b34444" class="outline-2">
+<h2 id="org5b34444"><span class="section-number-2">1.</span> Risk</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Risk is a statement about the likelihood and magnitude of adverse events.  There are differing ways to classify 'adverse event' which leads to differing measures and ways of stating risk, such as:
@@ -84,9 +84,9 @@ Risk is a statement about the likelihood and magnitude of adverse events.  There
 <ul class="org-ul">
 <li>The average return deviation from the mean (standard deviation)</li>
 
-<li>The expected loss if the return over a period is less than 10\%</li>
+<li>The expected loss if the return over a period is less than 10%</li>
 
-<li>The probability you lose over $\\(X\) in a given month</li>
+<li>The probability you lose over \(X\) in a given month</li>
 </ul>
 
 <p>
@@ -97,11 +97,11 @@ To find these values, we'll need some description of how our security (or portfo
 
 
 
-<div id="outline-container-org8046906" class="outline-2">
-<h2 id="org8046906"><span class="section-number-2">2.</span> Security Behavior</h2>
+<div id="outline-container-orgadf8c0d" class="outline-2">
+<h2 id="orgadf8c0d"><span class="section-number-2">2.</span> Security Behavior</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-The behavior is described through a [probability density function (PDF)](<a href="http://en.wikipedia.org/wiki/Probability_density_function">http://en.wikipedia.org/wiki/Probability_density_function</a>) which gives the likelihood that returns will be in a given interval.
+The behavior is described through a <a href="http://en.wikipedia.org/wiki/Probability_density_function">probability density function (PDF)</a> which gives the likelihood that returns will be in a given interval.
 </p>
 
 <p>
@@ -122,8 +122,8 @@ Either way we must use historical data, or our own judgment, to describe future 
 
 
 
-<div id="outline-container-orgfec26cb" class="outline-2">
-<h2 id="orgfec26cb"><span class="section-number-2">3.</span> The Normal Distribution</h2>
+<div id="outline-container-org88d95b4" class="outline-2">
+<h2 id="org88d95b4"><span class="section-number-2">3.</span> The Normal Distribution</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The most-commonly assumed PDF is the normal distribution.
@@ -147,8 +147,8 @@ The normal distribution is completely determined by its mean and variance (or st
 
 
 
-<div id="outline-container-orge9182ee" class="outline-2">
-<h2 id="orge9182ee"><span class="section-number-2">4.</span> Standard Deviation and Symmetry</h2>
+<div id="outline-container-orgf8a1c29" class="outline-2">
+<h2 id="orgf8a1c29"><span class="section-number-2">4.</span> Standard Deviation and Symmetry</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The standard deviation is the average <b>squared</b> deviation from the mean. 
@@ -159,15 +159,15 @@ The standard deviation is the average <b>squared</b> deviation from the mean.
 
 <li>But we only care about the negative returns when calculating risk.</li>
 
-<li>Since for a symmetric distribution, the probability of a 5\% or more deviation is equivalent to the probability of -5\% or less deviation, it is fine to square the deviation.</li>
+<li>Since for a symmetric distribution, the probability of a 5% or more deviation is equivalent to the probability of -5% or less deviation, it is fine to square the deviation.</li>
 </ul>
 </div>
 </div>
 
 
 
-<div id="outline-container-org1352f9a" class="outline-2">
-<h2 id="org1352f9a"><span class="section-number-2">5.</span> Allowing Asymmetry</h2>
+<div id="outline-container-orga83bf4a" class="outline-2">
+<h2 id="orga83bf4a"><span class="section-number-2">5.</span> Allowing Asymmetry</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 What if return distributions are not symmetric?  Say, for instance, that the distribution is left-skewed.
@@ -191,8 +191,8 @@ For non-symmetric distributions, the act of squaring loses important information
 
 
 
-<div id="outline-container-orgf963cc4" class="outline-2">
-<h2 id="orgf963cc4"><span class="section-number-2">6.</span> What about Fat Tails?</h2>
+<div id="outline-container-orga42b477" class="outline-2">
+<h2 id="orga42b477"><span class="section-number-2">6.</span> What about Fat Tails?</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Fat tails (excess kurtosis) are also a salient feature of asset returns.
@@ -208,8 +208,8 @@ Fat tails (excess kurtosis) are also a salient feature of asset returns.
 
 
 
-<div id="outline-container-orgc6b2e29" class="outline-2">
-<h2 id="orgc6b2e29"><span class="section-number-2">7.</span> Historical vs (Symmetric) Normal Distribution</h2>
+<div id="outline-container-org8cff899" class="outline-2">
+<h2 id="org8cff899"><span class="section-number-2">7.</span> Historical vs (Symmetric) Normal Distribution</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 In the following app we'll calculate and plot the empirical PDF of the stock's returns.  We'll then use the stock's historical mean return and standard deviation to overlay a normal distribution.
@@ -220,51 +220,40 @@ In the following app we'll calculate and plot the empirical PDF of the stock's r
 
 <li>Similarly, we need to pay attention to the difference between the two distributions near the tails.</li>
 </ul>
-
-<p>
-&lt;!&#x2014;
-On the second tab the results of hypothesis tests for skewness ad kurtosis are returned.
-&#x2013;&gt;
-</p>
 </div>
 </div>
 
-
-
-<div id="outline-container-org8fa0fd5" class="outline-2">
-<h2 id="org8fa0fd5"><span class="section-number-2">8.</span> Empirical vs Normal Distribution</h2>
+<div id="outline-container-orgc5440c0" class="outline-2">
+<h2 id="orgc5440c0"><span class="section-number-2">8.</span> Empirical vs Normal Distribution</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
-<li>Take a look at Twitter ([TWTR](<a href="https://www.bloomberg.com/quote/TWTR:US">https://www.bloomberg.com/quote/TWTR:US</a>)) over 2014.  The stock's returns exhibit both negative skewness and kurtosis.  This means the standard deviation would have understated risk.</li>
+<li>Take a look at Exxon (Ticker: XOM) over 2020.  The stock's returns exhibit both negative skewness and kurtosis.  This means the standard deviation would have understated risk.</li>
 
-<li>Looking at Apple ([AAPL](<a href="https://www.bloomberg.com/quote/AAPL:US">https://www.bloomberg.com/quote/AAPL:US</a>)) from 1/2015 through 4/2015 shows a symmetric, fairly normal, distribution &#x2013; the standard deviation would have been a good measure of risk.</li>
+<li>Looking at Apple (AAPL) from 1/2015 through 4/2015 shows a symmetric, fairly normal, distribution &#x2013; the standard deviation would have been a good measure of risk.</li>
 
-<li>[GE](<a href="https://www.bloomberg.com/quote/GE:US">https://www.bloomberg.com/quote/GE:US</a>) from 1/2015 to 4/2015 shows positive skewness.  The standard deviation would have overstated risk.</li>
+<li>GE from 1/2015 to 4/2015 shows positive skewness.  The standard deviation would have overstated risk.</li>
 </ul>
 </div>
 </div>
 
 
-
-<div id="outline-container-org80eb406" class="outline-2">
-<h2 id="org80eb406"><span class="section-number-2">9.</span> Empirical vs Normal Distribution</h2>
+<div id="outline-container-org90fc9fc" class="outline-2">
+<h2 id="org90fc9fc"><span class="section-number-2">9.</span> Empirical vs Normal Distribution</h2>
 <div class="outline-text-2" id="text-9">
-<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/dists/" height="100%" width="100%" allow="fullscreen"></iframe>
+<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/dists/" height=800 width="100%" allow="fullscreen"></iframe>
 </div>
 </div>
 
 
-
-
-<div id="outline-container-org5fa299e" class="outline-2">
-<h2 id="org5fa299e"><span class="section-number-2">10.</span> Value at Risk (VaR)</h2>
+<div id="outline-container-orge8bd574" class="outline-2">
+<h2 id="orge8bd574"><span class="section-number-2">10.</span> Value at Risk (VaR)</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 VaR is a very common way of stating the amount of risk. 
 </p>
 
 <ul class="org-ul">
-<li>5\% VaR is the return for which, in any given period, there is a 5\% chance of experiencing a worse return.  So say the 5\% VaR is -8\%. Then there is a 5\% chance of experiencing a return less than -8\% over the next period.</li>
+<li>5% VaR is the return for which, in any given period, there is a 5% chance of experiencing a worse return.  So say the 5% VaR is -8%. Then there is a 5% chance of experiencing a return less than -8% over the next period.</li>
 
 <li>VaR solely focuses on the left tail of the return distribution.</li>
 </ul>
@@ -272,9 +261,8 @@ VaR is a very common way of stating the amount of risk.
 </div>
 
 
-
-<div id="outline-container-org208d028" class="outline-2">
-<h2 id="org208d028"><span class="section-number-2">11.</span> VaR Implementation</h2>
+<div id="outline-container-org6b20dde" class="outline-2">
+<h2 id="org6b20dde"><span class="section-number-2">11.</span> VaR Implementation</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 VaR is widely used and is written into banking regulations.  
@@ -294,17 +282,17 @@ VaR still requires an assumption concerning the returns' PDF.
 
 
 
-<div id="outline-container-org23fdd44" class="outline-2">
-<h2 id="org23fdd44"><span class="section-number-2">12.</span> VaR App</h2>
+<div id="outline-container-org4cb5ea2" class="outline-2">
+<h2 id="org4cb5ea2"><span class="section-number-2">12.</span> VaR App</h2>
 <div class="outline-text-2" id="text-12">
 <p>
-The following app will calculate the \% VaR for any stock over any time interval you choose.  
+The following app will calculate the % VaR for any stock over any time interval you choose.  
 </p>
 
 <ul class="org-ul">
 <li>Click the <b>Normal</b> and <b>Empirical</b> tabs to see the VaR that assumes a normal PDF (using the historical mean and standard deviation) and a PDF fit to historical data.</li>
 
-<li>Can you find stocks for which the normal and empirical VaR are different?  Is the difference in VaR greater if you use 1\% VaR versus 5\% VaR?</li>
+<li>Can you find stocks for which the normal and empirical VaR are different?  Is the difference in VaR greater if you use 1% VaR versus 5% VaR?</li>
 
 <li>VaR is most useful for portfolios, or an entire book of business.  In the following app the default ticker is SPY, an exchange traded fund which tracks the S&amp;P 500 index.</li>
 </ul>
@@ -313,25 +301,21 @@ The following app will calculate the \% VaR for any stock over any time interval
 
 
 
-<div id="outline-container-orgc4320d6" class="outline-2">
-<h2 id="orgc4320d6"><span class="section-number-2">13.</span> Value at Risk (VaR)</h2>
+<div id="outline-container-orgfb8e0bc" class="outline-2">
+<h2 id="orgfb8e0bc"><span class="section-number-2">13.</span> Value at Risk (VaR)</h2>
 <div class="outline-text-2" id="text-13">
-<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/var_app/" height="100%" width="100%" allow="fullscreen"></iframe>
+<iframe src="https://ztranche.com/portfolio_theory/intro_measuring_risk/var_app/" height=800 width="100%" allow="fullscreen"></iframe>
 </div>
 </div>
 
 
 
 
-<div id="outline-container-org1af7b7d" class="outline-2">
-<h2 id="org1af7b7d"><span class="section-number-2">14.</span> Continuing from Here</h2>
+<div id="outline-container-orgd714dbe" class="outline-2">
+<h2 id="orgd714dbe"><span class="section-number-2">14.</span> Continuing from Here</h2>
 <div class="outline-text-2" id="text-14">
-<p>
-In the following [presentations on risk](<a href="http://www.5minutefinance.org/topics/risk">http://www.5minutefinance.org/topics/risk</a>) we'll cover topics such as:
-</p>
-
 <ul class="org-ul">
-<li>The extent to which the parameters of the PDF change over time (and particularly during a financial crisis)</li>
+<li>The extent to which the <a href="https://financial-education.github.io/time_varying_volatility/">parameters of the PDF change over time</a> (and particularly during a financial crisis)</li>
 
 <li>Measures specifically designed for asymmetric distributions, such as <b>Lower Partial Standard Deviation</b></li>
 </ul>
@@ -340,7 +324,7 @@ In the following [presentations on risk](<a href="http://www.5minutefinance.org/
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2024-03-22 Fri 18:14</p>
+<p class="date">Created: 2024-04-09 Tue 21:59</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
